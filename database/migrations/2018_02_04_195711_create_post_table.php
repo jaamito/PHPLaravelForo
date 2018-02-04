@@ -15,9 +15,11 @@ class CreatePostTable extends Migration
     {
         Schema::create('post', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('idUsuario');
+            $table->integer('idUsuario')->unsigned();
             $table->tring('titulo');
             $table->timestamps();
+            //FOREIGN KEY con la tabla de users(relacionar id usuarios con campo idUsuario)
+            $table->foreign('idUsuario')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

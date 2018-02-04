@@ -15,7 +15,11 @@ class CreateComentariosTable extends Migration
     {
         Schema::create('comentarios', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('idPost')->unsigned();
+            $table->string('comentario');
             $table->timestamps();
+            //FOREIGN KEY relacionar comentarios con su respectivo post.
+            $table->foreign('idPost')->references('id')->on('post')->onDelete('cascade');
         });
     }
 
