@@ -17,4 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'ForoController@index');
+Route::post('/home/crear','ForoController@store');
+Route::get('/home/crear','ForoController@crear');
+Route::get('/home/{id}','ForoController@show');
+Route::get('/home/ver','ForoController@verTusPost');
+

@@ -17,6 +17,12 @@
                             Comentar
                         </h4>
                     </a>
+       
+    <a href="{{ url('/home/' . $post->id ) }}">
+        <h4 style="min-height:45px;margin:5px 0 10px 0">
+        	Editar
+        </h4>
+    </a>
     </div>
     @endforeach
 @endsection
